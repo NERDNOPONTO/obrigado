@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obrigado - WhatsApp Marketing Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #00ff99;
+      --secondary: #00c4cc;
+      --dark: #0a0a0a;
+      --darker: #000;
+      --light: #f5f5f5;
+      --gray: #1e1e1e;
+      --glow: 0 0 15px rgba(0, 255, 153, 0.5);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+      background-color: var(--darker);
+      color: var(--light);
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Efeito de partículas */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    
+    /* Header com efeito de vídeo de fundo */
+    .thank-you-header {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
+      z-index: -1;
+    }
+    
+    .thank-you-content {
+      max-width: 800px;
+      position: relative;
+      z-index: 2;
+      background: rgba(30, 30, 30, 0.8);
+      padding: 60px 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 255, 153, 0.2);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 1s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .thank-you-content h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: var(--glow);
+      line-height: 1.2;
+    }
+    
+    .thank-you-content p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+    
+    .next-steps {
+      text-align: left;
+      margin: 40px 0;
+      padding: 0 20px;
+    }
+    
+    .next-steps h3 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+    
+    .next-steps ol {
+      padding-left: 20px;
+    }
+    
+    .next-steps li {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    
+    .confirmation-icon {
+      font-size: 5rem;
+      color: var(--primary);
+      margin-bottom: 30px;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-20px); }
+      60% { transform: translateY(-10px); }
+    }
+    
+    .action-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    
+    .action-button {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      min-width: 200px;
+      text-align: center;
+    }
+    
+    .primary-button {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: var(--darker);
+      box-shadow: 0 5px 15px rgba(0, 255, 153, 0.4);
+    }
+    
+    .secondary-button {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    
+    .action-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 255, 153, 0.6);
+    }
+    
+    /* Rodapé */
+    footer {
+      background: var(--dark);
+      padding: 30px 20px;
+      text-align: center;
+      position: relative;
+      margin-top: auto;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--light);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background: var(--primary);
+      color: var(--darker);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      margin-top: 20px;
+      opacity: 0.7;
+      font-size: 0.8rem;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .thank-you-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .thank-you-content p {
+        font-size: 1rem;
+      }
+      
+      .action-buttons {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .action-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Efeito de partículas -->
+  <div id="particles-js"></div>
+  
+  <!-- Conteúdo principal -->
+  <section class="thank-you-header">
+    <video autoplay muted loop class="video-background">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-wavy-grid-1231-large.mp4" type="video/mp4">
+    </video>
+    
+    <div class="thank-you-content">
+      <div class="confirmation-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h1>Obrigado por se Inscrever!</h1>
+      <p>Sua inscrição no WhatsApp Marketing Pro foi confirmada com sucesso. Em breve você receberá um e-mail com todas as instruções para começar a revolucionar seu marketing digital.</p>
+      
+      <div class="next-steps">
+        <h3>Próximos passos:</h3>
+        <ol>
+          <li>Verifique sua caixa de entrada (e spam) para encontrar nosso e-mail de boas-vindas</li>
+          <li>Acesse sua área de membros com as credenciais que enviamos</li>
+          <li>Assista ao vídeo tutorial para configurar sua conta</li>
+          <li>Comece a criar suas primeiras campanhas e veja os resultados!</li>
+        </ol>
+      </div>
+      
+      <div class="action-buttons">
+        <a href="https://seusite.com/area-do-cliente" class="action-button primary-button">
+          Acessar Área do Cliente
+        </a>
+        <a href="https://seusite.com/tutoriais" class="action-button secondary-button">
+          Ver Tutoriais
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-content">
+      <h2>WhatsApp Marketing Pro</h2>
+      <p>A solução completa para seu marketing digital no WhatsApp</p>
+      
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+      </div>
+      
+      <p class="copyright">© 2023 WhatsApp Marketing Pro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Efeito de partículas
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#00ff99"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00ff99",
+          "opacity": 0.2,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
